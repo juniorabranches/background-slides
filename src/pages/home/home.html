@@ -1,0 +1,41 @@
+<ion-header no-border>
+  <ion-navbar transparent>
+  </ion-navbar>
+</ion-header>
+<ion-content class="primary-font">
+  <ion-slides pager="false" autoplay="2000" loop="true" speed="1500" effect="fade">
+    <ion-slide class="slide-background swiper-no-swiping" *ngFor="let background of backgrounds" [ngStyle]="{'background-image': 'url(' + background +')'}">
+    </ion-slide>
+  </ion-slides>
+  <div class="login-container">
+
+
+      <ion-item>
+        <ion-input [(ngModel)]="email"
+                   type="text"
+                   placeholder="Email"
+                   clearInput clearOnEdit="false">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="password"
+                   type="password"
+                   placeholder="Senha"
+                   clearInput clearOnEdit="false">
+        </ion-input>
+      </ion-item>
+      <button ion-button block outline color="light" class="login-button" (click)="login()">Login</button>
+
+    <div class="strike">
+      <span>OU</span>
+    </div>
+    <button ion-button icon-left block outline color="light" class="login-button" (click)="facebookLogin()"><ion-icon name="logo-facebook"></ion-icon>Login com Facebook</button>
+    <br><br><br><br>
+    <div (click)="goToSignup()">
+      <span>Ainda não possui conta? <button ion-button block outline color="light" class="login-button">Cadastre-se</button></span>
+    </div>
+  </div>
+
+
+
+</ion-content>
